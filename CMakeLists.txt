@@ -1,7 +1,7 @@
 cmake_minimum_required (VERSION 3.0)
 project (cpp_snippets)
 
-# print out general infos
+### Print out general infos
 message("Current source dir: ${CMAKE_CURRENT_SOURCE_DIR}")
 message("Build Type: ${CMAKE_BUILD_TYPE}")
 
@@ -11,12 +11,17 @@ set (CMAKE_CXX_STANDARD 14)
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
 
+### Lambda captures
 add_executable(lambda_capture_main lambda_capture_main.cpp)
 target_link_libraries(lambda_capture_main PRIVATE Threads::Threads)
 
+### Modulo
 add_executable(modulo_main modulo_main.cpp)
 
-# clang-tidy
+### Modular arithmetic
+add_executable(modular_arithmetic_main modular_arithmetic_main.cpp)
+
+### clang-tidy
 find_program(
   CLANG_TIDY_EXE
   NAMES "clang-tidy"
