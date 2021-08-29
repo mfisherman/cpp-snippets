@@ -44,7 +44,7 @@ inline uint64_t mod_add(uint64_t a, uint64_t b, uint64_t n)
 
 // This function computes (a - b) % n.
 // From: Matters Computational (https://www.jjj.de/fxt/fxtbook.pdf), chapter 39.1.
-inline uint64_t mod_minus(uint64_t a, uint64_t b, uint64_t n)
+inline uint64_t mod_subtract(uint64_t a, uint64_t b, uint64_t n)
 {
     assert(a < n);
     assert(b < n);
@@ -222,7 +222,7 @@ int main(int argc, char **argv)
     std::cout << "-9978483 % 6742 = " << mod(-9978483, 6742) << std::endl;
     std::cout << "368554407370949273 % 698223547 = " << mod_pos(368554407370949273UL, 698223547) << std::endl;
     std::cout << "(3577888489959895 + 1944674407370949273) % 13686744073709492732 = " << mod_add(3577888489959895UL, 1944674407370949273UL, 13686744073709492732UL) << std::endl;
-    std::cout << "(18226785267862220 - 6985665525488000877) % 7985665525488000877 = " << mod_minus(18226785267862220UL, 6985665525488000877UL, 7985665525488000877UL) << std::endl;
+    std::cout << "(18226785267862220 - 6985665525488000877) % 7985665525488000877 = " << mod_subtract(18226785267862220UL, 6985665525488000877UL, 7985665525488000877UL) << std::endl;
     std::cout << "(68529989 + 1) % 68529990 = " << mod_increment(68529989UL, 68529990UL) << std::endl;
     std::cout << "(0 - 1) % 68529990 = " << mod_decrement(0, 68529990UL) << std::endl;
     std::cout << "(5478239525828 + x) % 678874930481234881 = 0 -> x = " << mod_additive_inverse(5478239525828UL, 678874930481234881UL) << std::endl;
