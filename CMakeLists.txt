@@ -6,7 +6,7 @@ message("Current source dir: ${CMAKE_CURRENT_SOURCE_DIR}")
 message("Build Type: ${CMAKE_BUILD_TYPE}")
 
 set (CXX_FLAGS_GLOBAL "-O3 -lstdc++ -lm")
-set (CMAKE_CXX_STANDARD 14)
+set (CMAKE_CXX_STANDARD 17)
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads REQUIRED)
@@ -20,6 +20,9 @@ add_executable(modulo_main modulo_main.cpp)
 
 ### Modular arithmetic
 add_executable(modular_arithmetic_main modular_arithmetic_main.cpp)
+
+### Random access unordered map
+add_executable(random_access_unordered_map_main random_access_unordered_map_main.cpp)
 
 ### clang-tidy
 find_program(
